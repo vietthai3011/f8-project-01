@@ -1,0 +1,580 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0f1b4c;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Common */
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    width: 1110px;
+
+    /* Max-width giúp khi thu nhỏ trình duyệt nhỏ hơn width-1110px thì không bị ẩn đi và độ rộng ăn theo trình duyệt */
+    /* cacl(100% - 48px) khi thu nhỏ trình duyệt sẽ thừa ra 2 bên 24px */
+    max-width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 9.8rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background: var(--primary-color);
+    text-align: center;
+    color: #fff;
+
+    /* Cho pading vào giúp khi tăng kí tự sẽ không bị dính vào mép, vì có boxsizing: border-box nên không tăng kích thước */
+    padding: 18px 16px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Hiển thị dấu 3 chấm khi nội dung vượi giới hạn */
+.line-clamp {
+    display: -webkit-box;
+
+    /* Giá trị mặc định là 2 khi biến không khai báo */
+    -webkit-line-clamp: var(--line-clamp, 2);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/*===================== Header =========================*/
+
+.header {
+    position: relative;
+    background: #e6f0ff;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    padding-top: 38px;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+
+    /* margin-lest để tăng khoảng cách thẻ ul vs logo */
+    margin-left: 5rem;
+}
+
+.navbar .actions {
+    margin-left: auto;
+}
+
+.navbar ul a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #4f5361;
+
+    /* tăng vùng bấm bằng cách tăng pading để tối ưu cho người dùng */
+    padding: 8px 14px;
+}
+
+.navbar ul li:hover a {
+    text-decoration: underline;
+}
+
+.navbar .actions .action-link {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.navbar .actions .action-btn {
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-left: 18px;
+}
+
+.hero {
+    margin-top: 130px;
+}
+
+.hero .info {
+    width: 50%;
+}
+
+.hero .info .suv-title {
+    color: #687690;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.18px;
+}
+
+.hero .info .title {
+    margin-top: 8px;
+
+    /* Giảm xuống 6.2rem để chữ không bị xuống hàng */
+    font-size: 6.2rem;
+    font-weight: 700;
+    line-height: 118.75%;
+    text-align: left;
+    color: #000336;
+}
+
+.hero .info .desc {
+    margin-top: 30px;
+    color: #5a6473;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.78;
+}
+
+.hero .info .hero-cta {
+    margin-top: 40px;
+    min-width: 170px;
+}
+
+.hero .hero-img {
+    position: absolute;
+    right: calc((100vw - 1110px) / 2 - 100px);
+    bottom: 0;
+}
+
+/* ============ Clients ============ */
+
+.clients {
+    margin-top: 79px;
+    padding: 43px 0 41px;
+}
+
+.clients .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clients .desc {
+    color: #7d8589;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.clients .row-desc {
+    margin-top: 18.15px;
+}
+
+.clients .images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+
+/* ============ Guides ========== */
+
+.guides {
+    margin-top: 40px;
+    padding: 93px 0 79px;
+}
+
+.guides .suv-title {
+    position: relative;
+    color: #000339;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.guides .suv-title::before {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    display: inline-block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    background: #000339;
+}
+
+.guides .desc {
+    width: 459px;
+    max-width: 100%;
+    margin: 20px auto 0;
+    color: #5a6473;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.875;
+}
+
+/* ================= Guides =============== */
+
+.list-guides {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+/* text-align: center; cho vào thẻ cha để căn giữa thẻ img ( thẻ inline ) và chữ thẻ con */
+
+.guides-item {
+    margin: 0 70px;
+    text-align: center;
+}
+
+.guides-item .title {
+    margin-top: 26px;
+    color: #3b3c45;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.guides-item .link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0689ff;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.guides-item .link .arrow {
+    margin-left: 6px;
+}
+
+.guides-item .link:hover {
+    text-decoration: underline;
+}
+
+.guides-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.guides-cta .btn {
+    min-width: 170px;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* ============ Featured =========== */
+
+.featured {
+    margin-top: 41px;
+    padding: 110px 0;
+    background: #f5fafe;
+}
+
+.featured .suv-title {
+    color: #000339;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.featured .rew {
+    display: flex;
+    justify-content: space-between;
+}
+
+.featured .desc {
+    color: #5a6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.875;
+}
+
+.featured .link {
+    display: flex;
+    align-items: center;
+    color: #0689ff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.featured .arrow {
+    margin-left: 8px;
+}
+
+.featured .list {
+    display: flex;
+    margin-top: 66px;
+    gap: 30px;
+}
+
+.featured .item {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    /* Dung overflow: hidden, sau này làm chi tiết chỉ vào hiện ra bảng thông tin thì bảng thoong tin sẽ không chạy ra ngoài được */
+    /* overflow: hidden; */
+}
+
+.featured .item .thumb {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.featured .item .body {
+    padding: 17px 20px 22px;
+}
+
+.featured .item .body .title a {
+    color: #000339;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.featured .item .body .desc {
+    margin-top: 11px;
+    color: #a3a6ab;
+    font-size: 14px;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.featured .item .body .info {
+    display: flex;
+    align-items: center;
+    margin-top: 21px;
+}
+
+.featured .item .icon {
+    margin-left: 23px;
+}
+
+.featured .item .icon:first-child {
+    margin-left: 0;
+}
+
+.featured .item .body .label {
+    margin-left: 8px;
+    color: #4d4d52;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.01em;
+}
+
+/* =============================Stats============================== */
+
+.stats {
+    margin-top: 75px;
+    padding: 50px 0;
+}
+
+.stats .content {
+    width: 1017px;
+}
+
+.stats .row {
+    display: flex;
+    /* justify-content: space-between; */
+}
+.stats .img-block,
+.stats .info {
+    width: 50%;
+}
+
+.stats .img-block .image {
+    margin-left: auto;
+    display: block;
+    width: 400px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.stats .img-block {
+    position: relative;
+}
+
+.stats .stats-trend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 239px;
+    border-radius: 0 0 12px 12px;
+    padding: 45px 22px 40px;
+    background: #ffffff;
+}
+
+.stats .stats-trend .value {
+    color: #000339;
+    font-size: 2.6;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stats .stats-trend .icon {
+    margin-left: auto;
+}
+
+.stats-trend .desc {
+    color: #a7a7a7;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.stats-trend .senparate {
+    height: 1.2px;
+    margin-top: 25px;
+    background: #e9e9e9;
+}
+
+.stats-trend .avatar-group {
+    display: flex;
+}
+
+.stats-trend .avatar-block {
+    display: flex;
+    gap: 16px 14px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.stats-trend .avatar-block .avatar {
+    width: 16px;
+    height: 16px;
+    margin-left: -3px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Thêm margin-left= 0; để những avatar đầu không bị lệch 3px */
+.stats-trend .avatar-block .avatar:first-child {
+    margin-left: 0;
+}
+
+.stats .info {
+    padding: 79px 0 0 165px;
+}
+
+.stats .info .sub-title {
+    position: relative;
+    width: 269px;
+    color: #000339;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.285;
+}
+
+.stats .info .sub-title::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+
+    content: "";
+    display: block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    background: #000339;
+}
+
+.stats .info .desc {
+    width: 309px;
+    margin-top: 20px;
+    color: #5a6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.875;
+}
+
+.stats .row-qty {
+    padding: 0 32px;
+    justify-content: space-between;
+    margin-top: 110px;
+}
+
+.stats .row-qty .qty {
+    color: #000;
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.stats .row-qty .qty-desc {
+    margin-top: 24px;
+    color: #7b8087;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* ==================== Subscription ================== */
+
+.Subscription {
+    margin-top: 51px;
+}
+
+.Subscription .body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 370px;
+    max-width: 100%;
+    border-radius: 20px;
+    background: #063183;
+}
+
+
+/* Đặt width để văn bản dài quá không chọc xuyên hình ảnh */
+.Subscription .info {
+    width: 671px;
+    padding: 0 80px;
+}
+
+.Subscription .suv-title {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.Subscription .desc {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88;
+    opacity: 0.75;
+}
+
+.Subscription .btn {
+    min-width: 151px;
+    margin-top: 20px;
+    background: #fff;
+    color: #002366;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.Subscription .image {
+    position: absolute;
+    bottom: 0;
+    right: 221px;
+}
