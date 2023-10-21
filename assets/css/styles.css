@@ -292,7 +292,7 @@ a {
     line-height: 1;
 }
 
-.featured .rew {
+.featured .row {
     display: flex;
     justify-content: space-between;
 }
@@ -541,7 +541,6 @@ a {
     background: #063183;
 }
 
-
 /* Đặt width để văn bản dài quá không chọc xuyên hình ảnh */
 .Subscription .info {
     width: 671px;
@@ -577,4 +576,79 @@ a {
     position: absolute;
     bottom: 0;
     right: 221px;
+}
+
+/* ================= Footer ================= */
+
+.Footer {
+    margin-top: 55px;
+    padding: 50px 0 58px;
+}
+
+.Footer .row {
+    display: flex;
+}
+
+.Footer .row-top {
+    gap: 185px;
+}
+
+.Footer .heading {
+    color: #1c1c1d;
+    font-family: "Lato", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.Footer .list,
+.Footer .desc {
+    margin-top: 42px;
+}
+
+.Footer .item {
+    margin-top: 18px;
+}
+
+.Footer .item a,
+.Footer .desc {
+    color: #7a7a7e;
+    font-size: 1.6rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.Footer .desc {
+    white-space: normal;
+    line-height: 1.75;
+}
+
+.Footer .social {
+    /* Cho display: flex; để xóa bỏ dấy cách của các thẻ con */
+    display: flex;
+    margin-top: 40px;
+}
+/* Mặc dù thẻ con là display: inline; nhưng khi nằm trong thẻ cha display: flex; thì có thể đặt được width, height. NÊn không cần thêm display: inline-block, block; */
+.Footer .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.Footer .social-link:hover {
+    background: #e8e5e5;
+}
+
+.Footer .row-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 81px;
+}
+
+.Footer .copyright {
+    color: #c2c2c2;
+    font-size: 14px;
+    font-weight: 400;
 }
