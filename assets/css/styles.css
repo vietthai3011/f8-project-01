@@ -6,6 +6,11 @@
     --primary-color: #0f1b4c;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -61,15 +66,18 @@ a {
 
 /*===================== Header =========================*/
 
-.header {
-    position: relative;
+/* thêm padding-top: 26px; để bù lại khoảng padding: 12px; của .navbar */
+.fixed-header {
+    z-index: 1;
+    position: sticky;
+    top: -26px;
     background: #e6f0ff;
-    height: 100vh;
+    padding-top: 26px;
 }
 
 .navbar {
     display: flex;
-    padding-top: 38px;
+    padding: 12px;
     align-items: center;
 }
 
@@ -107,6 +115,15 @@ a {
     border-radius: 8px;
     padding: 13px 16px;
     margin-left: 18px;
+}
+
+/* Đặt height: calc(100vh - 90px); để chân ảnh không bị tụt xuống dưới do header đẩy xuống */
+.hero-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #e6f0ff;
+    height: calc(100vh - 90px);
 }
 
 .hero {
@@ -638,6 +655,7 @@ a {
     /* Cho display: flex; để xóa bỏ dấy cách của các thẻ con */
     display: flex;
     margin-top: 40px;
+    gap: 16px;
 }
 /* Mặc dù thẻ con là display: inline; nhưng khi nằm trong thẻ cha display: flex; thì có thể đặt được width, height. NÊn không cần thêm display: inline-block, block; */
 .Footer .social-link {
@@ -646,6 +664,7 @@ a {
     justify-content: center;
     width: 28px;
     height: 28px;
+    background: #f9f9f9;
 }
 
 .Footer .social-link:hover {
