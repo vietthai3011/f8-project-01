@@ -118,17 +118,15 @@ a {
 }
 
 /* Đặt height: calc(100vh - 90px); để chân ảnh không bị tụt xuống dưới do header đẩy xuống */
+/* justify-content: center; để phần info luôn căn giữa theo chiều dọc do flex-direction: column; đổi chiều */
 .hero-wrap {
     position: relative;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     background: #e6f0ff;
     height: calc(100vh - 90px);
-}
-
-.hero {
-    margin-top: 130px;
-}
+}   
 
 .hero .info {
     width: 50%;
