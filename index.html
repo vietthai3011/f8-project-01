@@ -101,15 +101,37 @@
         <!-- Style CSS -->
 
         <link rel="stylesheet" href="./assets/css/styles.css" />
+
+        <!-- Responsive CSS -->
+
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
+        <!-- PC header -->
         <header class="fixed-header">
             <div class="content">
                 <!-- navbar -->
                 <nav class="navbar">
+                    <!-- TABLET & MOBILE menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="27"
+                            width="14"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
                     <!-- LOgo -->
                     <a href="#"
-                        ><img src="./assets/img/logo.svg" alt="Besnik."
+                        ><img
+                            class="logo"
+                            src="./assets/img/logo.svg"
+                            alt="Besnik."
                     /></a>
                     <!-- Navigation -->
                     <ul>
@@ -127,12 +149,45 @@
                 </nav>
             </div>
         </header>
-
+        <!-- TABLET & MOBILE header -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                name=""
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
+            <!-- Overlay -->
+            <!-- Để Overlay là thẻ label khi ấn vào Overlay thì sẽ tác động vào input (input đang bật) -> tắt => overlay tắt -->
+            <label for="menu-checkbox" class="menu-overlay"></label>
+            <!-- Menu content -->
+            <div class="menu-drawer">
+                <a href="#"
+                    ><img
+                        class="logo"
+                        src="./assets/img/logo.svg"
+                        alt="Besnik."
+                /></a>
+                <!-- Navigation -->
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="show-on-mobile separate">
+                        <a href="#!">Sign in</a>
+                    </li>
+                    <li class="show-on-mobile"><a href="#!">Sign up</a></li>
+                </ul>
+            </div>
+        </header>
         <main>
             <!-- Hero -->
             <div class="hero-wrap">
                 <div class="content">
-                    <div class="hero">
+                    
                         <div class="info">
                             <p class="suv-title">Welcome to Besnik Agency</p>
                             <h1 class="title">
@@ -152,7 +207,6 @@
                             class="hero-img"
                         />
                         <!-- Cho nội dung H1 vào trong alt giúp công cụ tìm kiếm hiểu được bức hình -->
-                    </div>
                 </div>
             </div>
 
@@ -172,7 +226,7 @@
                         <p class="desc row-desc">
                             More than 45,000+ companies trust besnik
                         </p>
-                        <p class="desc row-desc">5 Star Ratings (2k+ Review)</p>
+                        <p class="desc row-desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
                     </div>
                     <div class="images">
                         <a href="#!">
@@ -265,7 +319,7 @@
                     </ul>
 
                     <div class="guides-cta">
-                        <a href="#!" class="btn">Sell Full Guidelines lore</a>
+                        <a href="#!" class="btn">Sell Full Guidelines</a>
                     </div>
                 </div>
             </div>
@@ -419,6 +473,10 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="view-all show-on-mobile">
+                        <a href="#!" class="btn">View All Properties</a>
+                    </div>
                 </div>
             </div>
 
@@ -447,7 +505,7 @@
                                     By avarage for 2 bedroom apments in San
                                     Francisco, CA
                                 </p>
-                                <div class="senparate"></div>
+                                <div class="separate"></div>
 
                                 <div class="avatar-block">
                                     <div class="avatar-group">

@@ -77,7 +77,7 @@ a {
 
 .navbar {
     display: flex;
-    padding: 12px;
+    padding: 12px 0;
     align-items: center;
 }
 
@@ -119,6 +119,7 @@ a {
 
 /* Đặt height: calc(100vh - 90px); để chân ảnh không bị tụt xuống dưới do header đẩy xuống */
 /* justify-content: center; để phần info luôn căn giữa theo chiều dọc do flex-direction: column; đổi chiều */
+/* display: flex; để căn giữa phần content bao bọc phần info */
 .hero-wrap {
     position: relative;
     display: flex;
@@ -126,13 +127,13 @@ a {
     flex-direction: column;
     background: #e6f0ff;
     height: calc(100vh - 90px);
-}   
+}
 
-.hero .info {
+.hero-wrap .info {
     width: 50%;
 }
 
-.hero .info .suv-title {
+.hero-wrap .info .suv-title {
     color: #687690;
     font-size: 1.8rem;
     font-weight: 500;
@@ -140,18 +141,17 @@ a {
     letter-spacing: 0.18px;
 }
 
-.hero .info .title {
+.hero-wrap .info .title {
     margin-top: 8px;
 
     /* Giảm xuống 6.2rem để chữ không bị xuống hàng */
     font-size: 6.2rem;
     font-weight: 700;
     line-height: 118.75%;
-    text-align: left;
     color: #000336;
 }
 
-.hero .info .desc {
+.hero-wrap .info .desc {
     margin-top: 30px;
     color: #5a6473;
     font-size: 1.8rem;
@@ -159,12 +159,12 @@ a {
     line-height: 1.78;
 }
 
-.hero .info .hero-cta {
+.hero-wrap .info .hero-cta {
     margin-top: 40px;
     min-width: 170px;
 }
 
-.hero .hero-img {
+.hero-wrap .hero-img {
     position: absolute;
     right: calc((100vw - 1110px) / 2 - 100px);
     bottom: 0;
@@ -344,9 +344,10 @@ a {
 }
 
 .featured .list {
-    display: flex;
-    margin-top: 66px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 66px;
 }
 
 .featured .item {
@@ -468,7 +469,7 @@ a {
     line-height: 1.5;
 }
 
-.stats-trend .senparate {
+.stats-trend .separate {
     height: 1.2px;
     margin-top: 25px;
     background: #e9e9e9;
@@ -617,7 +618,7 @@ a {
 }
 
 .Footer .row-top {
-    gap: 185px;
+    column-gap: 185px;
 }
 
 .Footer .heading {

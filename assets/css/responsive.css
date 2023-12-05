@@ -1,0 +1,261 @@
+/* PC */
+@media screen and (min-width: 992px) {
+    .toggle-menu {
+        display: none;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+/* TABLET & MOBILE */
+@media screen and (max-width: 991.98px) {
+    .toggle-menu {
+        display: block;
+    }
+
+    .toggle-menu svg {
+        width: 24px;
+        color: #666;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s ease;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        inset: 0 40% 0 0;
+        padding: 60px;
+        background: #fff;
+        z-index: 2;
+        transform: translate(-100%);
+        transition: 0.5s;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-overlay:active {
+        visibility: hidden;
+    }
+
+    .menu-checkbox:checked ~ .menu-drawer {
+        transform: translate(0%);
+    }
+
+    .menu-drawer ul {
+        margin-top: 32px;
+    }
+
+    .menu-drawer ul a {
+        display: block;
+        color: #333;
+        padding: 14px 0;
+        font-weight: 500;
+    }
+
+    .separate {
+        border-top: 1.5px solid #ebebeb;
+    }
+
+    .hero-wrap .hero-img {
+        display: none;
+    }
+
+    .hero-wrap .info {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-wrap .desc {
+        width: 80%;
+        margin: 30px auto auto;
+    }
+
+    .clients .images {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .guides-item {
+        margin: 0;
+        flex: 1;
+    }
+
+    .featured .list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats .row {
+        flex-direction: column-reverse;
+    }
+
+    .stats .img-block,
+    .stats .info {
+        width: 100%;
+    }
+
+    .stats .info {
+        padding: 0;
+    }
+
+    .stats .info .sub-title {
+        width: 70%;
+    }
+
+    .stats .info .desc {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .stats .row-qty {
+        flex-direction: row;
+    }
+
+    .stats .row-qty .qty {
+        font-size: 5rem;
+    }
+
+    .stats .row-qty .qty-desc {
+        font-size: 1.5rem;
+    }
+
+    .Subscription .image {
+        display: none;
+    }
+
+    .Footer .row-top {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        row-gap: 80px;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768.98px) and (max-width: 991.98px) {
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 767.98px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .menu-drawer {
+        padding: 40px;
+        inset: 0 25% 0 0;
+    }
+
+    .navbar .actions {
+        display: none;
+    }
+
+    .hero-wrap {
+        height: calc(100vh - 80px);
+    }
+
+    .hero-wrap .info .title {
+        margin-top: 20px;
+        font-size: 5.2rem;
+    }
+
+    .hero-wrap .info .desc {
+        width: 100%;
+    }
+
+    .clients .images {
+        row-gap: 20px;
+    }
+
+    .list-guides {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
+    .guides-cta {
+        margin-top: 60px;
+    }
+
+    .featured .link {
+        display: none;
+    }
+
+    .featured .list {
+        grid-template-columns: 1fr;
+    }
+
+    .featured .view-all {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .stats .info .sub-title {
+        width: 100%;
+    }
+
+    .stats .img-block .image {
+        width: 100%;
+    }
+
+    .stats .stats-trend {
+        left: 20px;
+    }
+
+    .stats .row-qty {
+        flex-direction: column;
+        align-items: center;
+    row-gap: 60px;
+    }
+
+    .Subscription .info {
+        padding: 32px;
+    }
+
+    .Subscription .body {
+        height: auto;
+    }
+
+    .Footer .row-top {
+        grid-template-columns: 1fr;
+    }
+
+    .Footer .row-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 24px;
+    }
+}
